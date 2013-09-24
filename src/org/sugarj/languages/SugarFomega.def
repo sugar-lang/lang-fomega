@@ -32,18 +32,8 @@ exports
     LAYOUT? -/- [\/] . [\*]
 
 
-  context-free start-symbols
-  	CompilationUnit
-
-  context-free syntax
-    FomegaModuleDec FomegaImports FomegaOrSugarDec -> CompilationUnit {cons("CompilationUnit")}
-
-    FomegaDefinitions -> FomegaOrSugarDec
-    SugarDefElements -> FomegaOrSugarDec
-
-    ExtensionElem+ -> SugarDefElements {cons("ExtensionBody")}
-
   context-free syntax
     FomegaModuleDec -> ToplevelDeclaration
     FomegaImport -> ToplevelDeclaration
-    FomegaOrSugarDec -> ToplevelDeclaration
+    FomegaDefinitions -> ToplevelDeclaration
+    ExtensionElem+ -> ToplevelDeclaration {cons("ExtensionBody")}
