@@ -74,9 +74,12 @@ public class FomegaProcessor extends AbstractBaseProcessor {
    */
   
   @Override
-  public void init(RelativePath sourceFile, Environment environment) {
+  public void init(Set<RelativePath> sourceFiles, Environment environment) {
+    if (sourceFiles.size() != 1)
+      throw new IllegalArgumentException("Fomega can only compile one source file at a time.");
+    
     this.environment = environment;
-    this.sourceFile = sourceFile;
+    this.sourceFile = sourceFiles.iterator().next();
     outFile = environment.createOutPath(FileCommands.dropExtension(sourceFile.getRelativePath()) + ".pts-source");
   }
 

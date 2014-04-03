@@ -2,8 +2,8 @@ package org.sugarj.fomega;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
-import org.sugarj.FomegaLanguage;
 import org.sugarj.BaseLanguageRegistry;
+import org.sugarj.FomegaLanguage;
 
 /**
  * The activator class controls the plug-in life cycle
