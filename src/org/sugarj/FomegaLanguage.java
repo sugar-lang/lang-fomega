@@ -16,7 +16,9 @@ import org.sugarj.common.path.Path;
 
 public class FomegaLanguage extends AbstractBaseLanguage {
 
-	private FomegaLanguage() { }
+	private static final long serialVersionUID = 1605935901326767469L;
+
+  private FomegaLanguage() { }
 	
 	private static FomegaLanguage instance = new FomegaLanguage();
 	
