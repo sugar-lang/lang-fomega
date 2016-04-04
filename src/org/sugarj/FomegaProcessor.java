@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Set;
 
 import org.spoofax.interpreter.terms.IStrategoTerm;
-import org.sugarj.baselang.IORelay;
 import org.sugarj.common.ATermCommands;
+import org.sugarj.common.Environment;
 import org.sugarj.common.FileCommands;
 import org.sugarj.common.StringCommands;
 import org.sugarj.common.path.Path;
@@ -31,7 +31,7 @@ public class FomegaProcessor extends AbstractBaseProcessor {
 
   private Set<RelativePath> generatedModules = new HashSet<RelativePath>();
   
-  private IORelay environment;
+  private Environment environment;
   private String relNamespaceName;
   private RelativePath sourceFile;
   private Path outFile;
@@ -74,7 +74,7 @@ public class FomegaProcessor extends AbstractBaseProcessor {
    */
   
   @Override
-  public void init(Set<RelativePath> sourceFiles, IORelay environment) {
+  public void init(Set<RelativePath> sourceFiles, Environment environment) {
     if (sourceFiles.size() != 1)
       throw new IllegalArgumentException("Fomega can only compile one source file at a time.");
     
